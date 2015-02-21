@@ -1,0 +1,242 @@
+/* Using font icons from https://icomoon.io/
+ * 
+ * Licensed under CC 4.0
+ */
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*******************************************************************************
+ * Global
+ ******************************************************************************/
+a {
+  color: #b3b3b3;
+  text-decoration: none; }
+
+a::-moz-focus-inner {
+  border: 0; }
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%; }
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.menu-icon:before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+header {
+  font-size: 2rem;
+  height: 2.1785rem;
+  background-color: #0e0d10;
+  color: white;
+  padding: 0.5rem;
+  z-index: 100;
+  border-bottom: 1px solid black; }
+  header h1, header .menu-icon {
+    float: left; }
+  header h1 {
+    margin-left: 10%; }
+
+.menu-icon:before {
+  font-family: icomoon;
+  color: white;
+  content: "\e9bd"; }
+
+/*******************************************************************************
+ * Calculator
+ ******************************************************************************/
+article {
+  position: relative;
+  height: calc(100% - 5.1785rem - 1px); }
+
+.screen {
+  background-color: #3d3d3d;
+  color: white;
+  height: 20%; }
+  .screen #secDisplay, .screen #mainDisplay {
+    text-align: right;
+    position: relative; }
+    .screen #secDisplay p, .screen #mainDisplay p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 0.5rem 0; }
+      .screen #secDisplay p span, .screen #mainDisplay p span {
+        font-size: 50%;
+        margin-right: 1rem; }
+  .screen #secDisplay {
+    height: 40%;
+    font-size: 1.5rem; }
+  .screen #mainDisplay {
+    height: 60%;
+    font-size: 3rem; }
+
+.control {
+  width: 100%;
+  height: 80%; }
+  .control table, .control tr {
+    width: 100%;
+    text-align: center; }
+  .control table {
+    height: 101%; }
+  .control tr {
+    height: 25%; }
+  .control td {
+    background-color: #27252b;
+    color: white;
+    padding: 0;
+    width: 33%; }
+    .control td button {
+      font-size: 1.5rem;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      color: white; }
+    .control td button:focus {
+      outline: 0; }
+    .control td button::-moz-focus-inner {
+      border: 0; }
+  .control .left, .control .mid, .control .right {
+    border-top: 1px solid black; }
+  .control .left {
+    border-right: 1px solid black; }
+  .control .right {
+    border-left: 1px solid black; }
+  .control .action {
+    color: black;
+    background-color: #c54a16; }
+
+/*******************************************************************************
+ * Menu
+ ******************************************************************************/
+@-webkit-keyframes menuslide {
+  0% {
+    left: -60%; }
+
+  100% {
+    left: 0; } }
+@-moz-keyframes menuslide {
+  0% {
+    left: -60%; }
+
+  100% {
+    left: 0; } }
+@-ms-keyframes menuslide {
+  0% {
+    left: -60%; }
+
+  100% {
+    left: 0; } }
+@keyframes menuslide {
+  0% {
+    left: -60%; }
+
+  100% {
+    left: 0; } }
+#menu {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  height: 101%;
+  max-height: 101%;
+  overflow-y: auto;
+  width: 60%;
+  z-index: 10;
+  background-color: #0e0d10; }
+
+.menu-visible {
+  -webkit-animation: menuslide 0.5s ease-out forwards;
+  -moz-animation: menuslide 0.5s ease-out forwards;
+  -ms-animation: menuslide 0.5s ease-out forwards;
+  animation: menuslide 0.5s ease-out forwards; }
+
+.menu-item {
+  width: 100%;
+  color: white; }
+  .menu-item .menu-label {
+    color: white;
+    display: block;
+    width: 100%;
+    height: 2rem;
+    z-index: 100;
+    font-size: 1.5rem;
+    padding: 0.5rem 0 0.3rem 0;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid black; }
+    .menu-item .menu-label span {
+      display: block;
+      padding: 0 0.8rem; }
+  .menu-item .content {
+    display: none; }
+  .menu-item .content-visible {
+    display: initial; }
+
+.menu-item:first-child .menu-label {
+  border-top: none; }
+
+.menu-item:last-child .menu-label {
+  height: 0;
+  padding: 0;
+  border-bottom: none; }
+
+.currency {
+  width: 33%;
+  float: left; }
+  .currency span {
+    display: block;
+    padding: 0.8rem 0 0 0.4rem; }
+  .currency span:last-of-type {
+    padding-bottom: 0.4rem; }
+
+.content:after {
+  display: block;
+  content: "";
+  clear: both; }
+
+.set-cut p {
+  padding: 0.8rem 0 0 0.4rem;
+  float: left; }
+.set-cut p:first-of-type {
+  margin-top: 0.4rem; }
+.set-cut .slideThree {
+  float: left;
+  position: absolute;
+  right: 0;
+  margin: 0.8rem 0.4rem 0 0; }
+.set-cut .slideThree:after {
+  clear: both; }
+
+/*******************************
+ * Menu - About
+ ******************************/
+.menu-about {
+  margin: 0.5rem; }
+  .menu-about p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5; }
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  height: 2rem;
+  background-color: #0e0d10;
+  border-top: 1px solid black;
+  color: white;
+  text-align: center; }

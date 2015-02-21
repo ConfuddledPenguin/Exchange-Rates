@@ -1,0 +1,352 @@
+/* Using font icons from https://icomoon.io/
+ * 
+ * Licensed under CC 4.0
+ */
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$main-color: #27252B;
+$second-color: #3D3D3D;
+$third-color: #202020;
+$highlight: #C54A16;
+$menu-color: darken($main-color, 10%);
+
+/*******************************************************************************
+ * Global
+ ******************************************************************************/
+
+a{
+	color: darken(white, 30%);
+	text-decoration: none;
+}
+
+a::-moz-focus-inner {
+	border: 0;
+}
+
+html, body{
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+}
+
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.menu-icon:before{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+
+header{
+	font-size: 2rem;
+	height: 2.1785rem;
+	background-color: $menu-color;
+	color: white;
+	padding: 0.5rem;
+	z-index: 100;
+	border-bottom: 1px solid black;
+
+	h1, .menu-icon{
+		float: left;
+	}
+	h1{
+		margin-left: 10%;
+	}
+}
+
+.menu-icon:before{
+	font-family: icomoon;
+	color: white;
+	content: "\e9bd";
+}
+
+/*******************************************************************************
+ * Calculator
+ ******************************************************************************/
+
+article{
+	position: relative;
+	height: calc(100% - 5.1785rem - 1px);
+}
+
+.screen{
+	background-color: $second-color;
+	color: white;
+	height: 20%;
+
+	#secDisplay, #mainDisplay{
+		text-align: right;
+		position: relative;
+
+		p{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			margin: 0.5rem 0;
+
+			span{
+				font-size: 50%;
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	#secDisplay{
+		height: 40%;
+		font-size: 1.5rem;
+	}
+
+	#mainDisplay{
+		height: 60%;
+		font-size: 3rem;
+	}
+}
+
+.control{
+	width: 100%;
+	height: 80%;
+
+	table, tr{
+		width: 100%;
+		text-align: center;
+	}
+	table{
+		height: 101%; //css hack to get around tables
+	}
+	tr{
+		height: 25%;
+	}
+	td{
+		background-color: $main-color;
+		color: white;
+		padding: 0;
+		width: 33%;
+
+		button{
+			font-size: 1.5rem;
+			width: 100%;
+			height: 100%; //css hack to make it fill the cell
+			background-color: rgba(0,0,0,0);
+			border: none;
+			color: white;
+		}
+		button:focus{
+			outline: 0;//remove blue outline on focus
+		}
+		button::-moz-focus-inner {
+			  border: 0;
+		}
+	}
+	.left, .mid, .right{
+		border-top: 1px solid black;
+	}
+	.left{
+		border-right: 1px solid black;
+	}
+	.right{
+		border-left: 1px solid black;
+	}
+	.action{
+		color: black;
+		background-color: $highlight;
+	}
+}
+
+/*******************************************************************************
+ * Menu
+ ******************************************************************************/
+
+@-webkit-keyframes menuslide{
+	0%{
+		left: -60%;
+	}
+
+	100%{
+		left: 0;
+	}
+}
+
+@-moz-keyframes menuslide{
+	0%{
+		left: -60%;
+	}
+
+	100%{
+		left: 0;
+	}
+}
+
+@-ms-keyframes menuslide{
+	0%{
+		left: -60%;
+	}
+
+	100%{
+		left: 0;
+	}
+}
+
+@keyframes menuslide{
+	0%{
+		left: -60%;
+	}
+
+	100%{
+		left: 0;
+	}
+}
+
+#menu{
+	position: absolute;
+	top: 0;
+	left: -60%;
+	height: 101%;
+	max-height: 101%;
+	overflow-y: auto;
+	width: 60%;
+	z-index: 10;
+	background-color: $menu-color;
+}
+
+.menu-visible{
+	-webkit-animation: menuslide 0.5s ease-out forwards;
+	-moz-animation: menuslide 0.5s ease-out forwards;
+	-ms-animation: menuslide 0.5s ease-out forwards;
+	animation: menuslide 0.5s ease-out forwards;
+}
+
+.menu-item{
+	width: 100%;
+	color: white;
+
+	.menu-label{
+		color: white;
+		display: block;
+		width: 100%;
+		height: 2rem;
+		z-index: 100;
+		font-size: 1.5rem;
+		padding: 0.5rem 0 0.3rem 0;
+		border-top: 1px solid lighten(black, 10%);
+		border-bottom: 1px solid black;
+
+		span{
+			display: block;
+			padding: 0 0.8rem;
+		}
+	}
+
+	.content{
+		display:none;
+	}
+
+	.content-visible{
+		display: initial;
+	}
+}
+
+.menu-item:first-child{
+	.menu-label{
+		border-top: none;
+	}
+}
+.menu-item:last-child{
+	.menu-label{
+		height: 0;
+		padding: 0;
+		border-bottom: none;
+	}
+}
+
+.currency{
+	width: 33%;
+	float: left;
+
+	span{
+		display: block;
+		padding: 0.8rem 0 0 0.4rem;
+	}
+
+	span:last-of-type{
+		padding-bottom: 0.4rem;
+	}
+}
+
+.content:after{
+
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.set-cut{
+	p{
+		padding: 0.8rem 0 0 0.4rem;
+		float: left;
+	}
+	p:first-of-type{
+		margin-top: 0.4rem;
+	}
+
+	.slideThree{
+		float: left;
+		position: absolute;
+		right: 0;
+		margin: 0.8rem 0.4rem 0 0;
+	}
+
+	.slideThree:after{
+		// content: "";
+		clear: both;
+	}
+}
+
+/*******************************
+ * Menu - About
+ ******************************/
+
+.menu-about{
+	margin: 0.5rem;
+
+	p{
+		margin-bottom: 0.5rem;
+		line-height: 1.5;
+	}
+}
+
+.slide{
+
+}
+
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+ footer{
+ 	position: absolute;
+ 	bottom: 0;
+ 	width: 100%;
+ 	z-index: 100;
+ 	height: 2rem;
+ 	background-color: $menu-color;
+ 	border-top: 1px solid black;
+ 	color: white;
+ 	text-align: center;
+ }

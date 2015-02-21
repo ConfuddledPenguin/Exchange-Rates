@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exchange Rates</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,900,700,500' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="icon" sizes="192x192" href="res/icon.png" />
+    <link rel="apple-touch-icon" href="res/icon.png" />
+    <link rel="shortcut icon" href="res/icon.png" type="image/x-icon" />
+</head>
+<body>
+	<header class="clearfix">
+		<a class="menu-icon" href="#"><span></span></a>
+		<h1>Exchange Rates</h1>
+	</header>
+	<article>
+		<div class="screen">
+			<div id="secDisplay"></div>
+			<div id="mainDisplay"></div>
+		</div>
+		<div class="control">
+			<table>
+				<tr>
+					<td class="left"><button class="number">1</button></td>
+					<td class="mid"><button class="number">2</button></td>
+					<td class="right"><button class="number">3</button></td>
+				</tr>
+				<tr>
+					<td class="left"><button class="number">4</button></td>
+					<td class="mid"><button class="number">5</button></td>
+					<td class="right"><button class="number">6</button></td>
+
+				</tr>
+				<tr>
+					<td class="left"><button class="number">7</button></td>
+					<td class="mid"><button class="number">8</button></td>
+					<td class="right"><button class="number">9</button></td>
+
+				</tr>
+				<tr>
+					<td class="left bottom action clear"><button>C</button></td>
+					<td class="mid bottom"><button class="number">0</button></td>
+					<td class="right bottom action equals"><button>=</button></td>
+				</tr>
+			</table>
+		</div>
+		<div id="menu">
+			<div class="menu-item">
+				<a href="#" class="menu-label"><span>From Currency<span></a>
+				<div class="content"></div>
+			</div>
+			<div class="menu-item">
+				<a href="#" class="menu-label"><span>To Currency<span></a>
+				<div class="content"></div>
+			</div>
+			<div class="menu-item">
+				<a href="#" class="menu-label"><span>Set Cut<span></a>
+				<div class="content">
+					<div class="set-cut">
+						<p>Enable cut</p>
+						<div class="slideThree">  
+					      <input type="checkbox" value="None" id="slide" name="check" />
+					      <label for="slide"></label>
+					    </div>
+					    <p>Ability to change the cut goes here. Unfortunately time was pressed
+					    	and as such I could not get this in. Its set to 2%</p>
+				    </div>
+				</div>
+			</div>
+			<div class="menu-item">
+				<a href="#" class="menu-label"><span>About<span></a>
+				<div class="content">
+					<div class="menu-about">
+						<p>Currency data from <a href="http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html">ECB</a></p>
+						<p>Created by <a href="http://tom-maxwell.com">Thomas Maxwell</a></p>
+						<p>Source available on <a href="">Github</a></p>
+						<p>Created for the class CS317 at the University of Strathclyde</p>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item">
+				<a href="#" class="menu-label"></a>
+			</div>
+		</div>
+	</article>
+	<footer>
+		<p>Made by Tom Maxwell</p>
+	</footer>
+	<script src="js/rateView.js"></script>
+	<script src="js/rates.js"></script>
+	<script src="js/rateModel.js"></script>
+	<script src="js/rateController.js"></script>
+</body>
+</html>
